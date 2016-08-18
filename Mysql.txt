@@ -1,0 +1,19 @@
+
+
+--> Create table
+a.) create table course(course_id int primary key auto-increment,name varchar(100) not null, fees int not null,duration_type enum('D','W','M','Y'),status tinyint(1),added_date time stamp defaulty Current_timestamp);
+
+--> Insert
+a.)INSERT INTO`batch(`Batch_no`,`Batch_name`,`facilitator_id`,`Start`,`Duration`)
+VALUES('12', 'L6DC', '65', '2016-08-02', '4');
+b.) INSERT INTO `facilitator` (`facilitator_id`, `facilitator_name`, `facilitator_address`, `course_id`, `faculty_id`, `enquiry_id`) VALUES ('56', 'Adele', 'California', '2', '6', '22');
+c.) INSERT INTO `faculty` (`Faculty_id`, `Faculty_name`, `added_date`) VALUES ('9', 'L6DC', '2016-07-04 00:00:00');
+d.) INSERT INTO `student` (`Student_id`, `Student_name`, `Student_address`, `Email`, `Contact_no`, `course_id`, `faculty_id`, `facililator_id`, `Enroll_date`, `facilitator_id`, `batch_no`, `enroll_id`) VALUES ('102', 'Grishma', 'Koirala', 'kio@gmail.com', '3456789', '2', '7', '65', '2016-08-16', '65', '2', '16'), ('105', 'binita_Sharma', 'Las Vegas', 'bini@gmail.com', '23456789', '3', '9', '65', '2016-08-16', '65', '3', '16');
+--> Alter;
+a.) alter table student add foreign key(batch_no) references batch(batch_no), add foreign key(faculty_id) references faculty(faculty_id),add foreign key(facilitator_id) references facilitator(facilitator_id), add foreign key(enroll_id)references enroll(enroll_id);
+
+b.) alter table facilitator add foreign key(faculty_id) references faculty(faculty_id),add foreign key(enquiry_id) references enquiry(enquiry_id);
+
+--> Update
+ a.) UPDATE `student` SET `Student_address` = 'nyc' WHERE `student`.`Student_id` = 105;
+
